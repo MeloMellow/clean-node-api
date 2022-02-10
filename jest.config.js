@@ -1,7 +1,7 @@
 
 module.exports = {
 
-  collectCoverage: false
+  collectCoverage: true,
 
-  // coverageDirectory: 'coverage'
+  coverageDirectory: 'coverage'
 }

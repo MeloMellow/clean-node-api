@@ -3,7 +3,7 @@ import MissingParamError from '../helpers/missing-param-error'
 import UnauthorizedError from '../helpers/unauthorized-error'
 import ServerError from '../helpers/server-error'
 import 'babel-polyfill'
-//
+
 const makeSut = () => {
   const authUseCaseSpy = makeAuthUseCase()
   authUseCaseSpy.accessToken = 'valid_token'

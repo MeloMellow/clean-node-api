@@ -1,7 +1,6 @@
 import HttpResponse from '../helpers/http-response'
 import 'babel-polyfill'
-import MissingParamError from '../helpers/missing-param-error'
-import InvalidParamError from '../helpers/invalid-param-error'
+import { MissingParamError, InvalidParamError } from '../errors'
 
 module.exports = class LoginRouter {
   constructor (authUseCase, emailValidator) {

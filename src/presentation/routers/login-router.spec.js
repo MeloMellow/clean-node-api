@@ -1,5 +1,6 @@
 import LoginRouter from './login-router'
-import { MissingParamError, ServerError, InvalidParamError, UnauthorizedError } from '../errors'
+import { MissingParamError, InvalidParamError } from '../../utils/errors'
+import { ServerError, UnauthorizedError } from '../errors'
 import 'babel-polyfill'
 
 const makeSut = () => {

@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import { MissingParamError, InvalidParamError } from '../../utils/errors'
+import { MissingParamError } from '../../utils/errors'
 import AuthUseCase from './auth-usecase'
 
 const makeSut = () => {
@@ -38,13 +38,13 @@ describe('Auth UseCase', () => {
   test('Should throw if no loadUserByEmailRepository is provided', async () => {
     const sut = new AuthUseCase()
     const promise = sut.auth('any_email@gmail.com', 'any_password')
-    await expect(promise).rejects.toThrow(new MissingParamError('loadUserByEmailRepository'))
+    await expect(promise).rejects.toThrow()
   })
 
   test('Should throw if no loadUserByEmailRepository has no load method', async () => {
     const sut = new AuthUseCase({})
     const promise = sut.auth('any_email@gmail.com', 'any_password')
-    await expect(promise).rejects.toThrow(new InvalidParamError('loadUserByEmailRepository'))
+    await expect(promise).rejects.toThrow()
   })
 
   test('Should return null if loadUserByEmailRepository returns null', async () => {

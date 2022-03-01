@@ -1,5 +1,7 @@
 import EmailValidator from './email-validator'
 import validator from 'validator'
+import MissingParamError from '../errors/missing-param-error'
+import 'babel-polyfill'
 
 const makeSut = () => {
   return new EmailValidator()
@@ -23,5 +25,10 @@ describe('Email Validator', () => {
     const sut = makeSut()
     sut.isValid('any_email@email.com')
     expect(validator.email).toBe('any_email@email.com')
+  })
+
+  test('Should throw if no email is provided', async () => {
+    const sut = makeSut()
+    expect(() => sut.isValid()).toThrow(new MissingParamError('email'))
   })
 })

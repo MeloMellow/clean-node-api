@@ -1,12 +1,5 @@
-import 'babel-polyfill'
+import Encrypter from './encrypter'
 import bcrypt from 'bcrypt'
-
-class Encrypter {
-  async compare (value, hash) {
-    const isValid = await bcrypt.compare(value, hash)
-    return isValid
-  }
-}
 
 const makeSut = () => {
   return new Encrypter()

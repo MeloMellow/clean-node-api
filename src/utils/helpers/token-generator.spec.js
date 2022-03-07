@@ -1,5 +1,6 @@
 import 'babel-polyfill'
 import jwt from 'jsonwebtoken'
+import MissingParamError from '../errors/missing-param-error'
 
 class TokenGenerator {
   constructor (secret) {
@@ -7,6 +8,9 @@ class TokenGenerator {
   }
 
   async generate (id) {
+    if (!this.secret) {
+      throw new MissingParamError('secret')
+    }
     return jwt.sign(id, this.secret)
   }
 }
@@ -34,5 +38,11 @@ describe('Token Generator', () => {
     await sut.generate('any_id')
     expect(jwt.id).toBe('any_id')
     expect(jwt.secret).toBe(sut.secret)
+  })
+
+  test('Should throw if no secret is provided', async () => {
+    const sut = new TokenGenerator()
+    const promise = sut.generate('any_id')
+    await expect(promise).rejects.toThrow(new MissingParamError('secret'))
   })
 })

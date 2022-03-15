@@ -1,4 +1,5 @@
 import 'babel-polyfill'
+import MissingParamError from '../../utils/errors/missing-param-error'
 
 module.exports = class LoadUserByEmailRepository {
   constructor (userModel) {
@@ -6,6 +7,9 @@ module.exports = class LoadUserByEmailRepository {
   }
 
   async load (email) {
+    if (!email) {
+      throw new MissingParamError('email')
+    }
     const user = await this.userModel.findOne({ email }, {
       projection: {
         password: 1

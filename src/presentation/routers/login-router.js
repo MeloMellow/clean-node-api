@@ -3,7 +3,7 @@ import 'babel-polyfill'
 import { MissingParamError, InvalidParamError } from '../../utils/errors'
 
 module.exports = class LoginRouter {
-  constructor (authUseCase, emailValidator) {
+  constructor ({ authUseCase, emailValidator } = {}) {
     this.authUseCase = authUseCase
     this.emailValidator = emailValidator
   }
@@ -26,7 +26,7 @@ module.exports = class LoginRouter {
       }
       return HttpResponse.ok({ accessToken })
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       return HttpResponse.serverError()
     }
   }

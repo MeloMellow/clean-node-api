@@ -16,5 +16,10 @@ module.exports = {
     await this.client.close()
     this.client = null
     this.db = null
+  },
+  async getDb () {
+    if (this.db) {
+      return this.db
+    }
   }
 }

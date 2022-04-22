@@ -17,9 +17,9 @@ module.exports = {
     this.client = null
     this.db = null
   },
-  async getDb () {
+  async getCollection (name) {
     if (this.db) {
-      return this.db
+      return this.db.collection(name)
     }
   }
 }

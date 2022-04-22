@@ -20,6 +20,8 @@ module.exports = {
   async getCollection (name) {
     if (this.db) {
       return this.db.collection(name)
+    } else {
+      return null
     }
   }
 }

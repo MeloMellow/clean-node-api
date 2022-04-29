@@ -1,5 +1,5 @@
-import UnauthorizedError from './unauthorized-error'
-import ServerError from './server-error'
+const UnauthorizedError = require('./unauthorized-error')
+const ServerError = require('./server-error')
 
 module.exports = {
   UnauthorizedError,

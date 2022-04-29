@@ -1,5 +1,5 @@
-import MissingParamError from './missing-param-error'
-import InvalidParamError from './invalid-param-error'
+const MissingParamError = require('./missing-param-error')
+const InvalidParamError = require('./invalid-param-error')
 
 module.exports = {
   MissingParamError,

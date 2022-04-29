@@ -1,6 +1,6 @@
-import 'babel-polyfill'
-import bcrypt from 'bcrypt'
-import MissingParamError from '../errors/missing-param-error'
+require('babel-polyfill')
+const bcrypt = require('bcrypt')
+const MissingParamError = require('../errors/missing-param-error')
 
 module.exports = class Encrypter {
   async compare (value, hash) {

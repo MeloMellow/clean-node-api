@@ -1,5 +1,5 @@
-import 'babel-polyfill'
-import MissingParamError from '../../utils/errors/missing-param-error'
+require('babel-polyfill')
+const MissingParamError = require('../../utils/errors/missing-param-error')
 const MongoHelper = require('../helpers/mongo-helper')
 
 module.exports = class LoadUserByEmailRepository {

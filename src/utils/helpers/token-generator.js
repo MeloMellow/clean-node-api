@@ -1,6 +1,6 @@
-import 'babel-polyfill'
-import jwt from 'jsonwebtoken'
-import MissingParamError from '../errors/missing-param-error'
+require('babel-polyfill')
+const jwt = require('jsonwebtoken')
+const MissingParamError = require('../errors/missing-param-error')
 
 module.exports = class TokenGenerator {
   constructor (secret) {

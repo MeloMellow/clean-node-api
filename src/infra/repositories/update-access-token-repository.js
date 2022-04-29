@@ -1,5 +1,5 @@
-import MissingParamError from '../../utils/errors/missing-param-error'
-import 'babel-polyfill'
+const MissingParamError = require('../../utils/errors/missing-param-error')
+require('babel-polyfill')
 const MongoHelper = require('../helpers/mongo-helper')
 
 module.exports = class UpdateAccessTokenRepository {

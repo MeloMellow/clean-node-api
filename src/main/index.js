@@ -6,7 +6,7 @@ MongoHelper.connect(env.mongoUrl)
     const app = require('./config/app')
 
     app.listen(env.port, () => {
-      console.log(`server running at localhost: ${env.port}`)
+      console.log(`server running at http://localhost:${env.port}`)
     })
   })
   .catch(console.error)

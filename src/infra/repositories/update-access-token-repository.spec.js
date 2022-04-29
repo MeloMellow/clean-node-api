@@ -1,15 +1,13 @@
 import MissingParamError from '../../utils/errors/missing-param-error'
 import MongoHelper from '../helpers/mongo-helper'
 import UpdateAccessTokenRepository from './update-access-token-repository'
-let userModel
+let userModel, fakeUserId
 
 const makeSut = () => {
   return new UpdateAccessTokenRepository()
 }
 
 describe('UpdateAccessToken Repository', () => {
-  let fakeUserId
-
   beforeAll(async () => {
     await MongoHelper.connect(global.__MONGO_URI__)
     userModel = await MongoHelper.getCollection('users')

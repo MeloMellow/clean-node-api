@@ -3,6 +3,15 @@ import validator from 'validator'
 import MissingParamError from '../errors/missing-param-error'
 import 'babel-polyfill'
 
+jest.mock('validator', () => ({
+  isEmailValid: true,
+  email: '',
+  isEmail (email) {
+    this.email = email
+    return this.isEmailValid
+  }
+}))
+
 const makeSut = () => {
   return new EmailValidator()
 }

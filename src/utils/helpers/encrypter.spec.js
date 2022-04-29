@@ -2,6 +2,15 @@ import Encrypter from './encrypter'
 import bcrypt from 'bcrypt'
 import MissingParamError from '../errors/missing-param-error'
 
+jest.mock('bcrypt', () => ({
+  isValid: true,
+  async compare (value, hash) {
+    this.value = value
+    this.hash = hash
+    return this.isValid
+  }
+}))
+
 const makeSut = () => {
   return new Encrypter()
 }

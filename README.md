@@ -1,3 +1,7 @@
 # clean-node-api
 
-### This Readme is under construction...
+* TDD
+* Clean Architecture
+* Design Patterns
+
+

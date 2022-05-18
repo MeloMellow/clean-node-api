@@ -3,3 +3,4 @@ coverage-bak
 coverage
 .vscode
 globalConfig.json
+.env

@@ -5,6 +5,7 @@
 This project is an example of an API that only authenticates a user.
 
 ## Usage
+
 First you will need a MongoDb database with a model called **users** working, then you will need to set the environment variables. The environment variables must be set in an .env file at the project root or they can be changed in the /src/main/config/env.js directory.
 ~~~.env
 MONGO_URL=your_mongodb_url
@@ -42,6 +43,8 @@ npm run test:ci
 ~~~
 
 You can check **package.json** for other possible commands.
+
+## Applied conceptss
 
 * TDD
 * Clean Architecture

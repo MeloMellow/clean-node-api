@@ -46,7 +46,7 @@ npm run test:ci
 
 You can check **package.json** for other possible commands.
 
-## Applied conceptss
+## Applied concepts
 
 * TDD
 * Clean Architecture
